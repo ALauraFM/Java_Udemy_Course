@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java_Udemy_Course.iml" filepath="$PROJECT_DIR$/.idea/Java_Udemy_Course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UdemyCourse/UdemyCourde.iml" filepath="$PROJECT_DIR$/UdemyCourse/UdemyCourde.iml" />
+    </modules>
+  </component>
+</project>
