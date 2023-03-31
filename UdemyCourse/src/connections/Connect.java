@@ -1,13 +1,14 @@
 package connections;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connection {
+public class Connect {
 
     //database connection attribute
 
-    private java.sql.Connection connection;
+    private Connection connection;
 
     /**
      * Method that connects to the database, in case it doesn't
@@ -30,14 +31,30 @@ public class Connection {
           System.err.println(e.getMessage());
           return false; //if doesn't connect, return false
         }
-         System.out.println("Connected established");
+         System.out.println("Connection established");
          return true;//if it connects, return true
     }
+
+    /**
+     * Method to disconnect from the database
+     * @return turn - if it disconnects
+     */
 
 
     public boolean disconnect()
     {
-        System.out.println("Disconnected to the database");
+        try
+        {
+            if(this.connection.isClosed() == false)
+                this.connection.close();
+
+        }
+        catch (SQLException e)
+        {
+                System.err.println(e.getMessage());
+                return false;
+        }
+        System.out.println("Disconnected from the database");
         return true; //in case it disconnects, return true;
     }
 

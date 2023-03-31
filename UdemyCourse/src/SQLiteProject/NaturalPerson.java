@@ -1,4 +1,4 @@
-package Project1;
+package SQLiteProject;
 
 import java.util.Date;
 
