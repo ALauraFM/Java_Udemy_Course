@@ -9,14 +9,16 @@ public class Main {
         Connect connection = new Connect();
         NaturalPersonTable tableNaturalPerson = new NaturalPersonTable();
         InsertNaturalPerson insertnp = new InsertNaturalPerson();
+        SearchDataNaturalPerson searchnp = new SearchDataNaturalPerson();
 
         connection.connect();
 
-        tableNaturalPerson.createTable();
+        //tableNaturalPerson.createTable();
 
         //insert things in the natural person table
-        insertnp.insertData("Ana Laura", "Fernandes", "100.475.431-00");
-        insertnp.insertData("Julia", "Farias", "722.987.784-02");
+        //insertnp.insertData("Ana Laura", "Fernandes", "100.475.431-00");
+        //insertnp.insertData("Julia", "Farias", "722.987.784-02");
+        searchnp.selectData();
         connection.disconnect();
     }
 }
