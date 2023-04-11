@@ -7,7 +7,7 @@ public class SearchDataNaturalPerson {
     private Connection connect(){
 
         //connection url
-        String url = "jdbc:sqlite:C:/Users/Laura/Documents/GitHub/Java_Udemy_Course/UdemyCourse/src/database/banco_sqlite.db";
+        String url = "jdbc:sqlite:C:/Users/Laura/Documents/GitHub/Java_Udemy_Course/SQLiteProject/src/database/banco_sqlite.db";
         Connection conn = null;
 
         try
@@ -44,7 +44,7 @@ public class SearchDataNaturalPerson {
                 System.out.println(rs.getInt("natural_person_id") + " "
                         + rs.getString("name") + " "
                         + rs.getString("surname") + " "
-                        + rs.getInt("cpf"));
+                        + rs.getString("cpf"));
             }
         }
         catch(SQLException e)

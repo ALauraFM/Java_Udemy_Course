@@ -9,7 +9,7 @@ public class NaturalPersonTable {
 
     public void createTable()
     {
-        String url = "jdbc:sqlite:C:/Users/Laura/Documents/GitHub/Java_Udemy_Course/UdemyCourse/src/database/banco_sqlite.db";
+        String url = "jdbc:sqlite:C:/Users/Laura/Documents/GitHub/Java_Udemy_Course/SQLiteProject/src/database/banco_sqlite.db";
 
         //Sql statement to create a new table
         String sql = "CREATE TABLE IF NOT EXISTS natural_person_table (\n"

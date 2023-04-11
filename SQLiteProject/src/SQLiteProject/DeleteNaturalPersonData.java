@@ -5,9 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InsertNaturalPerson {
+public class DeleteNaturalPersonData {
 
-    //method to connect to the database
     private Connection connect(){
 
         //connection url
@@ -26,26 +25,19 @@ public class InsertNaturalPerson {
         return conn;
     }
 
-    public void insertData(String name, String surname, String cpf)
+    public void deleteData(int id)
     {
-
-        String upperCaseName = name.toUpperCase();
-        String upperCaseSurname = surname.toUpperCase();
-
-        String sql = "INSERT INTO natural_person_table (name, surname, cpf) VALUES (?, ?, ?)";
+        String sql = "DELETE FROM natural_person_table WHERE natural_person_id = ?";
 
         try
         {
             Connection conn = this.connect();
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, upperCaseName);
-            pstmt.setString(2, upperCaseSurname);
-            pstmt.setString(3, cpf);
+
+            pstmt.setInt(1, id);
 
             pstmt.executeUpdate();
-            System.out.println("The data was added");
-
         }
         catch(SQLException e)
         {

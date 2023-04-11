@@ -22,7 +22,7 @@ public class Connect {
           //command to open the SQLite library
           Class.forName("org.sqlite.JDBC");
           //connection url
-          String url = "jdbc:sqlite:C:/Users/Laura/Documents/GitHub/Java_Udemy_Course/UdemyCourse/src/database/banco_sqlite.db";
+          String url = "jdbc:sqlite:C:/Users/Laura/Documents/GitHub/Java_Udemy_Course/SQLiteProject/src/database/banco_sqlite.db";
           //connect to the database
           this.connection = DriverManager.getConnection(url);
         }

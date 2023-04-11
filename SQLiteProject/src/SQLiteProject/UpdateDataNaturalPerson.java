@@ -5,9 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InsertNaturalPerson {
+public class UpdateDataNaturalPerson {
 
-    //method to connect to the database
     private Connection connect(){
 
         //connection url
@@ -26,13 +25,15 @@ public class InsertNaturalPerson {
         return conn;
     }
 
-    public void insertData(String name, String surname, String cpf)
-    {
+    /**
+     * Method to update data
+     */
 
+    public void updateData(int id, String name, String surname, String cpf)
+    {
+        String sql = "UPDATE natural_person_table SET name = ?, surname = ?, cpf = ? WHERE natural_person_id = ? ";
         String upperCaseName = name.toUpperCase();
         String upperCaseSurname = surname.toUpperCase();
-
-        String sql = "INSERT INTO natural_person_table (name, surname, cpf) VALUES (?, ?, ?)";
 
         try
         {
@@ -42,14 +43,18 @@ public class InsertNaturalPerson {
             pstmt.setString(1, upperCaseName);
             pstmt.setString(2, upperCaseSurname);
             pstmt.setString(3, cpf);
+            pstmt.setInt(4, id);
+
 
             pstmt.executeUpdate();
-            System.out.println("The data was added");
+            System.out.println("The data was updated");
 
         }
         catch(SQLException e)
         {
             System.err.println(e.getMessage());
         }
+
     }
+
 }
